@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>vixsrc probe</title>
+</head>
+<body>
+  <h1>vixsrc embed probe (github.io referer)</h1>
+  <p id="log">loading…</p>
+  <iframe id="f" referrerpolicy="origin" src="https://vixsrc.to/movie/27205" width="480" height="300"></iframe>
+  <script>
+    const log = document.getElementById("log");
+    document.getElementById("f").addEventListener("load", () => { log.textContent = new Date().toISOString() + " IFRAME load fired"; });
+    document.getElementById("f").addEventListener("error", () => { log.textContent = new Date().toISOString() + " IFRAME error fired"; });
+  </script>
+</body>
+</html>
